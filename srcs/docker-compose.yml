@@ -1,10 +1,52 @@
 version: '3'
 
 services:
-  # Define your services here
   nginx:
+    container_name: nginx
     build: ./requirement/nginx/
+    restart: always
+    ports:
+      - 443:443
+    volumes:
+      - wp_files:/var/www/html
+    networks:
+      - inception
+
   mariadb:
+    container_name: mariadb
     build: ./requirement/mariadb
+    restart: always
+    volumes:
+      - mariadb_vm:
+    networks:
+      - inception
+
   wordpress:
+    container_name: wordpress
     build: ./requirement/wordpress
+    restart: always
+    volumes:
+      - wordpress_vm:
+    networks:
+      - inception
+
+volumes:
+  wp_database:
+    name: wp_database
+    driver: local
+    driver_opt:
+      o: bind
+      type: none
+      device: /home/abdeel-o/data/wp_database
+
+  wp_files:
+    name: wp_files
+    driver: local
+    driver_opt:
+      o: bind
+      type: none
+      device: /home/abdeel-o/data/wp_files
+
+networks:
+  inception:
+    bridge
