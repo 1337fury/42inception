@@ -11,6 +11,20 @@ if [ ! -f /var/www/wordpress/wp-config.php ]; then
         --dbpass=$SQL_PASSWORD \
         --dbhost=mariadb:3306 --path='/var/www/wordpress'
 
+    # Run WordPress installation and create two users
+    wp core install --allow-root \
+        --url=http://example.com \
+        --title="Fury" \
+        --admin_user=system \
+        --admin_password=gn2E@J5gx44s \
+        --admin_email=elouardyabdelhalim@gmail.com
+
+    # Create a second user
+    wp user create --allow-root \
+        abdeel-o \
+        abdelhalimeelouardi01@mail.com \
+        --user_pass=hm!XM3X3S1F5
+
     echo "WordPress has been configured."
 else
     echo "WordPress is already configured."
