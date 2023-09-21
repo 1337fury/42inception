@@ -39,7 +39,9 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 RUN mkdir -p /WordPressconf
 
 	# Copy the config_wp.sh script to the container
-COPY tools/config_wp.sh /WordPressconf/config_wp.sh.sh
+COPY tools/config_wp.sh /WordPressconf/config_wp.sh
+
+RUN chmod +x /WordPressconf/config_wp.sh
 
 	# Create /run/php directory
 RUN mkdir -p /run/php
@@ -49,4 +51,4 @@ EXPOSE 9000
 	# Start PHP-FPM
 CMD ["/usr/sbin/php-fpm7.3", "-F"]
 
-ENTRYPOINT ["/WordPressconf/config_wp.sh.sh"]
+ENTRYPOINT ["/WordPressconf/config_wp.sh"]
