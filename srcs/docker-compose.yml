@@ -30,7 +30,7 @@ volumes:
   wp_database:
     name: wp_database
     driver: local
-    driver_opt:
+    driver_opts:
       o: bind
       type: none
       device: /home/abdeel-o/data/wp_database
@@ -38,7 +38,7 @@ volumes:
   wp_files:
     name: wp_files
     driver: local
-    driver_opt:
+    driver_opts:
       o: bind
       type: none
       device: /home/abdeel-o/data/wp_files

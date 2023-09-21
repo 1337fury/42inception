@@ -2,6 +2,7 @@
 # Wait for MariaDB to launch (adjust the sleep time as needed)
 sleep 10
 
+cd /var/www/wordpress/
 # Check if wp-config.php does not exist
 if [ ! -f /var/www/wordpress/wp-config.php ]; then
     # Use the WordPress CLI to configure WordPress
@@ -29,3 +30,4 @@ if [ ! -f /var/www/wordpress/wp-config.php ]; then
 else
     echo "WordPress is already configured."
 fi
+cd
