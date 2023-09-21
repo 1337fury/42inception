@@ -14,7 +14,7 @@ if [ ! -f /var/www/wordpress/wp-config.php ]; then
     # Run WordPress installation and create two users
     wp core install --allow-root \
         --url=https:localhost \
-        --title="Fury" \
+        --title="fury_website" \
         --admin_user=system \
         --admin_password=gn2E@J5gx44s \
         --admin_email=elouardyabdelhalim@gmail.com
