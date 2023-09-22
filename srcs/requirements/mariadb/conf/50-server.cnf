@@ -3,12 +3,14 @@
 	# Configuration section for the MySQL server
 [mysqld]
 	# Set the user for the MySQL server
-user = root 
+user 					= root 
 	# Set the port number for the MySQL server
-port = 3306
+port 					= 3306
 	# Set the directory for storing MySQL data
-datadir = /var/lib/mysql
+datadir 				= /var/lib/mysql
 	# Set the socket file for communication with MySQL server
-socket = /var/run/mysqld/mysqld.sock
+socket 					= /var/run/mysqld/mysqld.sock
 	# Set the IP address to bind MySQL server to localhost
-bind-address = 0.0.0.0
+bind-address 			= 0.0.0.0
+	#
+pid-file                = /run/mysqld/mysqld.pid
