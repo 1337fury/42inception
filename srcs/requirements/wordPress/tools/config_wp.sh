@@ -1,6 +1,6 @@
 #!/bin/bash
 # Wait for MariaDB to launch (adjust the sleep time as needed)
-sleep 10
+sleep 5
 
 cd /var/www/wordpress/
 # Check if wp-config.php does not exist

@@ -11,4 +11,4 @@ datadir = /var/lib/mysql
 	# Set the socket file for communication with MySQL server
 socket = /var/run/mysqld/mysqld.sock
 	# Set the IP address to bind MySQL server to localhost
-bind-address = 127.0.0.1
+bind-address = 0.0.0.0
