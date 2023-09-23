@@ -1,3 +1,5 @@
+# 50-server.cnf file ####################################################
+
 # Configuration file for MySQL server
 
 	# Configuration section for the MySQL server
@@ -10,7 +12,7 @@ port 					= 3306
 datadir 				= /var/lib/mysql
 	# Set the socket file for communication with MySQL server
 socket 					= /var/run/mysqld/mysqld.sock
-	# Set the IP address to bind MySQL server to localhost
+	# Set the IP address to bind MySQL server to all
 bind-address 			= 0.0.0.0
 	#
 pid-file                = /run/mysqld/mysqld.pid
