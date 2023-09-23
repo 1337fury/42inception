@@ -9,7 +9,7 @@ RUN apt install mariadb-server -y
 
 EXPOSE 3306
 
-COPY conf/50-server.cnf	/etc/mysql/mariadb.conf.d/50-server.cnf
+COPY ./conf/50-server.cnf	/etc/mysql/mariadb.conf.d/50-server.cnf
 
 COPY ./tools/mariadb.sh /usr/local/bin/
 

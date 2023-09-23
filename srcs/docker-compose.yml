@@ -27,7 +27,7 @@ services:
     container_name: wordpress
     depends_on:
       - mariadb
-    build: ./requirements/wordpress
+    build: ./requirements/wordPress
     restart: always
     volumes:
       - wp_files:/var/www/wordpress
