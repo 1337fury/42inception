@@ -1,25 +1,23 @@
-#!/bin/bash
+#!/bin/sh
+service mariadb start
 
-# Start the MySQL service
-service mysql start
+# Wait for MySQL to start
+while ! mysqladmin ping -h localhost --silent; do
+    sleep 1
+done
 
-# Create database
-mysql -e "CREATE DATABASE IF NOT EXISTS \`$SQL_DATABASE\`;"
+# CREATE USER #
+echo "CREATE USER '$SQL_USER'@'%' IDENTIFIED BY '$SQL_PASSWORD';" | mysql
 
-# Create user with password
-mysql -e "CREATE USER IF NOT EXISTS \`$SQL_USER\`@'%' IDENTIFIED BY '$SQL_PASSWORD';"
+# PRIVILGES FOR ROOT AND USER FOR ALL IP ADRESS #
+echo "GRANT ALL PRIVILEGES ON *.* TO '$SQL_USER'@'%' IDENTIFIED BY '$SQL_PASSWORD';" | mysql
+echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$SQL_ROOT_PASSWORD';" | mysql
+echo "FLUSH PRIVILEGES;" | mysql
 
-# Grant all database privileges to the SQL user
-mysql -e "GRANT ALL PRIVILEGES ON \`$SQL_DATABASE\`.* TO \`$SQL_USER\`@'%' IDENTIFIED BY '$SQL_PASSWORD';"
+# CREAT WORDPRESS DATABASE #
+echo "CREATE DATABASE $SQL_DATABASE;" | mysql
 
-# Change the password for the root user in MySQL
-mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$SQL_ROOT_PASSWORD';"
 
-# Flush privileges
-mysql -u root -p$SQL_ROOT_PASSWORD -e "FLUSH PRIVILEGES;"
+kill $(cat /var/run/mysqld/mysqld.pid)
 
-# Shutdown MySQL
-mysqladmin -u root -p$SQL_ROOT_PASSWORD shutdown
-
-# Start the MySQL server in safe mode
-exec mysqld_safe
+mysqld

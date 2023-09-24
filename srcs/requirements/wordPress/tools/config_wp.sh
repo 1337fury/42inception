@@ -14,7 +14,7 @@ if [ ! -f /var/www/wordpress/wp-config.php ]; then
 
     # Run WordPress installation and create two users
     wp core install --allow-root \
-        --url=https:localhost \
+        --url=abdeel-o.42.fr \
         --title="fury_website" \
         --admin_user=system \
         --admin_password=gn2E@J5gx44s \
@@ -24,7 +24,7 @@ if [ ! -f /var/www/wordpress/wp-config.php ]; then
     wp user create --allow-root \
         abdeel-o \
         abdelhalimeelouardi01@mail.com \
-        --user_pass=hm!XM3X3S1F5
+        --user_pass='hm!XM3X3S1F5'
 
     echo "WordPress has been configured."
 else
