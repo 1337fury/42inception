@@ -14,7 +14,6 @@ mariadb-client
 	#To install wordPress from its download link we need `wget` command
 RUN apt install wget -y
 
-
 	#Copy the www.conf to the target location
 COPY ./conf/www.conf /etc/php/8.2/fpm/pool.d
 

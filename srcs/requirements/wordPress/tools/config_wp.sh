@@ -2,9 +2,9 @@
 # Wait for MariaDB to launch (adjust the sleep time as needed)
 sleep 5
 
-cd /var/www/wordpress/
 # Check if wp-config.php does not exist
 if [ ! -f /var/www/wordpress/wp-config.php ]; then
+	cd /var/www/wordpress/
     # Use the WordPress CLI to configure WordPress
     wp config create --allow-root \
         --dbname=$SQL_DATABASE \
@@ -26,8 +26,8 @@ if [ ! -f /var/www/wordpress/wp-config.php ]; then
         abdelhalimeelouardi01@mail.com \
         --user_pass='hm!XM3X3S1F5'
 
+	cd
     echo "WordPress has been configured."
 else
     echo "WordPress is already configured."
 fi
-cd

@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+  # Nginx
   nginx:
     container_name: nginx
     build: ./requirements/nginx/
@@ -22,7 +23,7 @@ services:
       - ./.env
     networks:
       - inception
-    # Wordpress
+  # Wordpress
   wordpress:
     container_name: wordpress
     depends_on:
