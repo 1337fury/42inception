@@ -1,26 +1,16 @@
-[server]
+# Configuration file for MySQL server
 
+	# Configuration section for the MySQL server
 [mysqld]
-
-user                    = mysql
+	# Set the user for the MySQL server
+user 					= mysql 
+	# Set the port number for the MySQL server
+port 					= 3306
+	# Set the directory for storing MySQL data
+datadir 				= /var/lib/mysql
+	# Set the socket file for communication with MySQL server
+socket 					= /var/run/mysqld/mysqld.sock
+	# Set the IP address to bind MySQL server to all
+bind-address 			= 0.0.0.0
+	#
 pid-file                = /run/mysqld/mysqld.pid
-socket                  = /run/mysqld/mysqld.sock
-port                    = 3306
-basedir                 = /usr
-datadir                 = /var/lib/mysql
-tmpdir                  = /tmp
-lc-messages-dir         = /usr/share/mysql
-lc-messages             = en_US
-skip-external-locking
-
-bind-address            = 0.0.0.0
-
-expire_logs_days        = 10
-character-set-server  = utf8mb4
-collation-server      = utf8mb4_general_ci
-
-[embedded]
-
-[mariadb]
-
-[mariadb-10.5]

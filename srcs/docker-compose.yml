@@ -9,7 +9,7 @@ services:
     ports:
       - 443:443
     volumes:
-      - wp_files:/var/www/wordpress
+      - wordpress_v:/var/www/wordpress
     networks:
       - inception
   # Database
@@ -18,7 +18,7 @@ services:
     build: ./requirements/mariadb
     restart: always
     volumes:
-      - wp_database:/var/lib/mysql
+      - mysql_v:/var/lib/mysql
     env_file:
       - ./.env
     networks:
@@ -31,28 +31,28 @@ services:
     build: ./requirements/wordPress
     restart: always
     volumes:
-      - wp_files:/var/www/wordpress
+      - wordpress_v:/var/www/wordpress
     env_file:
       - ./.env
     networks:
       - inception
 # Volumes
 volumes:
-  wp_database:
-    name: wp_database
+  mysql_v:
+    name: mysql_v
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/abdeel-o/data/wp_database
+      device: /home/abdeel-o/data/mysql
 
-  wp_files:
-    name: wp_files
+  wordpress_v:
+    name: wordpress_v
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/abdeel-o/data/wp_files
+      device: /home/abdeel-o/data/wordpress
 # Network
 networks:
   inception:
