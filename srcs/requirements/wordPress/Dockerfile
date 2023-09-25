@@ -2,10 +2,10 @@
 #...
 FROM debian:bookworm
 
-RUN apt update -y && apt upgrade -y
+RUN apt-get update -y && apt-get upgrade -y
 
 	#PHP and its dependencies
-RUN apt install -y \
+RUN apt-get install -y \
 php8.2 \
 php-fpm \
 php-mysql \
@@ -27,8 +27,8 @@ COPY ./tools/config_wp.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/config_wp.sh
 
-#go wordpress html directory
-WORKDIR /var/www/wordpress/
+#go www directory
+WORKDIR /var/www/wordpress
 
 EXPOSE 9000
 

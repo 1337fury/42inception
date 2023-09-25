@@ -3,7 +3,7 @@
 	# Configuration section for the MySQL server
 [mysqld]
 	# Set the user for the MySQL server
-user 					= mysql 
+user 					= mysql
 	# Set the port number for the MySQL server
 port 					= 3306
 	# Set the directory for storing MySQL data
