@@ -36,6 +36,18 @@ services:
       - ./.env
     networks:
       - inception
+  # Bonus Part
+  # Redis
+  redis:
+    container_name: redis
+    depends_on:
+      - wordpress
+    build: ./requirements/bonus/redis
+    restart: always
+    volumes:
+      - wordpress_v:/var/www/wordpress
+    networks:
+      - inception
 # Volumes
 volumes:
   mysql_v:
