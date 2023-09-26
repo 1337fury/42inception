@@ -49,6 +49,21 @@ else
 	sed -i "s/database_name_here/$SQL_DATABASE/g" wp-config-sample.php
 	cp wp-config-sample.php wp-config.php
 
+	wp core install --allow-root \
+        --url=abdeel-o.42.fr \
+        --title="fury_website" \
+        --admin_user=system \
+        --admin_password=gn2E@J5gx44s \
+        --admin_email=elouardyabdelhalim@gmail.com
+
+	wp user create --allow-root \
+        abdeel-o \
+        abdelhalimeelouardi01@mail.com \
+        --user_pass='hm!XM3X3S1F5'
+	
+	# Bonus Part
+	wp plugin install redis-cache --activate
+
 fi
 
 exec "$@"
