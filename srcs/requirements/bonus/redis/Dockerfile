@@ -14,6 +14,4 @@ COPY ./tools/config.sh /tmp/config.sh
 
 RUN chmod +x /tmp/config.sh
 
-ENTRYPOINT ["bash", "/tmp/config.sh"]
-
-CMD ["redis-server", "/etc/redis/redis.conf"]
+CMD ["bash", "/tmp/config.sh"]

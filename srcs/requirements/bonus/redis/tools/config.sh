@@ -1,12 +1,15 @@
-#!/bin/bash
+# redis Script
+#...
 
-# Start redis service
+#!/bin/sh
+
+# Start Redis service
 service redis-server start
 
-# Update Redis configuration
-redis-cli config set bind 0.0.0.0
-redis-cli config set maxmemory 200mb
-redis-cli config set maxmemory-policy allkeys-lfu
-redis-cli config set protected-mode no
+# Update Redis configuration in redis.conf
+sed -i 's/bind 127.0.0.1 -::1/bind 0.0.0.0 -::1/g' /etc/redis/redis.conf
+sed -i 's|maxmemory <bytes>|maxmemory 200mb|g' /etc/redis/redis.conf
+sed -i 's|maxmemory-policy noeviction|maxmemory-policy allkeys-lfu|g' /etc/redis/redis.conf
+sed -i 's|protected-mode yes|protected-mode no|g' /etc/redis/redis.conf
 
-exec "$@"
+redis-server --protected-mode no
