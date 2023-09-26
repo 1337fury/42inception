@@ -62,7 +62,7 @@ else
         --user_pass='hm!XM3X3S1F5'
 	
 	# Bonus Part
-	wp plugin install redis-cache --activate
+	wp plugin install --allow-root redis-cache --activate
 
 fi
 
