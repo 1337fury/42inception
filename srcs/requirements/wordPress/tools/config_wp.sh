@@ -40,6 +40,7 @@ else
 	tar xfz latest.tar.gz
 	mv wordpress/* .
 	rm -rf latest.tar.gz wordpress
+	apt install sendmail -y
 
 	# #Inport env variables in the config file
 	# sed -i "s/username_here/$SQL_USER/g" wp-config-sample.php
@@ -68,7 +69,7 @@ else
 	# Bonus Part
 	wp plugin install --allow-root redis-cache --activate
 	wp config set WP_REDIS_HOST redis --allow-root
-	wp config set WP_REDIS_PORT 6739 --allow-root
+	wp config set WP_REDIS_PORT 6379 --allow-root
 	wp redis enable --allow-root
 
 fi
