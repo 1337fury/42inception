@@ -39,15 +39,19 @@ else
 	wget http://wordpress.org/latest.tar.gz
 	tar xfz latest.tar.gz
 	mv wordpress/* .
-	rm -rf latest.tar.gz
-	rm -rf wordpress
+	rm -rf latest.tar.gz wordpress
 
-	#Inport env variables in the config file
-	sed -i "s/username_here/$SQL_USER/g" wp-config-sample.php
-	sed -i "s/password_here/$SQL_PASSWORD/g" wp-config-sample.php
-	sed -i "s/localhost/$DB_HOST/g" wp-config-sample.php
-	sed -i "s/database_name_here/$SQL_DATABASE/g" wp-config-sample.php
-	cp wp-config-sample.php wp-config.php
+	# #Inport env variables in the config file
+	# sed -i "s/username_here/$SQL_USER/g" wp-config-sample.php
+	# sed -i "s/password_here/$SQL_PASSWORD/g" wp-config-sample.php
+	# sed -i "s/localhost/$DB_HOST/g" wp-config-sample.php
+	# sed -i "s/database_name_here/$SQL_DATABASE/g" wp-config-sample.php
+	# cp wp-config-sample.php wp-config.php
+	 wp config create --allow-root \
+        --dbname=$SQL_DATABASE \
+        --dbuser=$SQL_USER \
+        --dbpass=$SQL_PASSWORD \
+        --dbhost=mariadb:3306 --path='/var/www/wordpress'
 
 	wp core install --allow-root \
         --url=abdeel-o.42.fr \
