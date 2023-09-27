@@ -54,11 +54,11 @@ else
         --title="fury_website" \
         --admin_user=system \
         --admin_password=gn2E@J5gx44s \
-        --admin_email=elouardyabdelhalim@gmail.com
+        --admin_email=sys@admin.me
 
 	wp user create --allow-root \
         abdeel-o \
-        abdelhalimeelouardi01@mail.com \
+        fury@std.me \
         --user_pass='hm!XM3X3S1F5'
 	
 	# Bonus Part
