@@ -10,7 +10,8 @@ php8.2 \
 php-fpm \
 php-mysql \
 mariadb-client \
-wget
+wget \
+sendmail
 
 	# Create /run/php directory
 RUN mkdir -p /run/php
