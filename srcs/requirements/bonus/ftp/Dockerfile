@@ -11,5 +11,3 @@ COPY conf/vsftpd.conf /etc/vsftpd.conf
 COPY tools/vsftpd.sh /usr/local/bin
 
 CMD [ "bash", "/usr/local/bin/vsftpd.sh" ]
-
-ENTRYPOINT [ "/usr/sbin/vsftpd", "/etc/vsftpd.conf" ]
