@@ -49,19 +49,19 @@ services:
     networks:
       - inception
   # FTP server
-  ftp:
-    container_name: ftp
-    depends_on:
-      - wordpress
-    build: ./requirements/bonus/ftp
-    restart: always
-    volumes:
-      - wordpress_v: /home/fury
-    environment:
-      - FTP_USER=fury
-      - FTP_PASS=aPsyceNtaCIR
-    networks:
-      - inception
+  # ftp:
+  #   container_name: ftp
+  #   depends_on:
+  #     - wordpress
+  #   build: ./requirements/bonus/ftp
+  #   restart: always
+  #   volumes:
+  #     - wordpress_v:/home/fury
+  #   environment:
+  #     - FTP_USER=fury
+  #     - FTP_PASS=aPsyceNtaCIR
+  #   networks:
+  #     - inception
 # Volumes
 volumes:
   mysql_v:
