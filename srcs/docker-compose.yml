@@ -56,7 +56,7 @@ services:
     build: ./requirements/bonus/ftp
     restart: always
     volumes:
-      - wordpress_v:/home/fury
+      - wordpress_v:/home/fury/mysite
     environment:
       - FTP_USER=fury
       - FTP_PASS=aPsyceNtaCIR

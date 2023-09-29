@@ -3,7 +3,9 @@
 service vsftpd start
 
 useradd $FTP_USER -d /home/$FTP_USER -M --password $FTP_PASS
-echo $FTP_USER >> /etc/vsftpd.user_list
+mkdir -p /home/$FTP_USER/mysite
+echo $FTP_USER >> /etc/vsftpd.userlist
+echo $FTP_USER >> /etc/vsftpd.chroot_list
 chown $FTP_USER:$FTP_USER -R /home/$FTP_USER
 
 service vsftpd stop
