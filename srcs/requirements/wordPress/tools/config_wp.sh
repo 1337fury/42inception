@@ -21,7 +21,7 @@ else
         --dbhost=mariadb:3306 --path='/var/www/wordpress'
 
 	wp core install --allow-root \
-        --url=abdeel-o.42.fr \
+        --url=10.11.249.226 \
         --title="fury_website" \
         --admin_user=system \
         --admin_password=gn2E@J5gx44s \
@@ -39,5 +39,3 @@ else
 	wp redis enable --allow-root
 
 fi
-
-exec "$@"

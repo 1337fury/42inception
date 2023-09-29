@@ -35,4 +35,4 @@ EXPOSE 9000
 	# Start PHP-FPM
 CMD ["/usr/sbin/php-fpm8.2", "-F"]
 
-ENTRYPOINT [ "bash", "/usr/local/bin/config_wp.sh" ]
+ENTRYPOINT [ "sh", "/usr/local/bin/config_wp.sh" ]
