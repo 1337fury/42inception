@@ -1,7 +1,8 @@
 # Dockerfile for Nginx
 FROM debian:bookworm
 
-RUN apt-get update -y && apt-get upgrade -y && apt-get install -y nginx vim curl openssl 2> /dev/null
+RUN apt-get update -y \
+&& apt-get install -y nginx openssl 2> /dev/null
 
 RUN mkdir -p /etc/nginx/ssl
 

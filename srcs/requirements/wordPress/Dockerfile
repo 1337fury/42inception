@@ -2,10 +2,9 @@
 #...
 FROM debian:bookworm
 
-RUN apt-get update -y && apt-get upgrade -y
-
 	#PHP and its dependencies
-RUN apt-get install -y \
+RUN apt-get update -y \
+&& apt-get install -y \
 php8.2 \
 php-fpm \
 php-mysql \

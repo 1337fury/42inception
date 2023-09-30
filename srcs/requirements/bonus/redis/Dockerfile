@@ -4,9 +4,7 @@
 FROM debian:bookworm
 
 RUN apt-get update -y \
-    && apt-get upgrade -y
-
-RUN apt-get install redis-server -y
+&& apt-get install redis-server -y
 
 EXPOSE 6379
 
