@@ -28,11 +28,12 @@ COPY ./tools/config_wp.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/config_wp.sh
 
 #go www directory
-WORKDIR /var/www/
+WORKDIR /var/www/wordpress
 
 RUN wget http://wordpress.org/latest.tar.gz \
 	&& tar xfz latest.tar.gz \
-	&& rm -rf latest.tar.gz
+	&& mv wordpress/* . \
+	&& rm -rf latest.tar.gz wordpress
 
 EXPOSE 9000
 
