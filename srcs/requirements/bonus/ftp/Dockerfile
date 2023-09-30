@@ -2,8 +2,9 @@
 # ...
 FROM debian:buster
 
-RUN apt-get update -y \
-&& apt-get install vsftpd -y
+RUN apt-get update -y && apt-get install -y \
+	vsftpd \
+&& rm -rf /var/lib/apt/lists/*
 
 EXPOSE 21
 

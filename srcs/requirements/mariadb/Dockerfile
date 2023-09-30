@@ -3,8 +3,9 @@
 
 FROM debian:bookworm
 
-RUN apt-get update -y \
-&& apt-get install mariadb-server -y
+RUN apt-get update -y && apt-get install -y \
+	mariadb-server \
+&& rm -rf /var/lib/apt/lists/*
 
 EXPOSE 3306
 
