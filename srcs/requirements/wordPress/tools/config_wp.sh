@@ -5,7 +5,7 @@ if [ -f ./wp-config.php ]
 then
 	echo "wordpress already downloaded"
 else
-	sleep 2
+	sleep 5
 	#Download wordpress and all config file
 	wget http://wordpress.org/latest.tar.gz
 	tar xfz latest.tar.gz
