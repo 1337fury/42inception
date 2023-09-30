@@ -7,10 +7,10 @@ then
 else
 	sleep 5
 	#Download wordpress and all config file
-	wget http://wordpress.org/latest.tar.gz
-	tar xfz latest.tar.gz
-	mv wordpress/* .
-	rm -rf latest.tar.gz wordpress
+	# wget http://wordpress.org/latest.tar.gz
+	# tar xfz latest.tar.gz
+	# mv wordpress/* .
+	# rm -rf latest.tar.gz wordpress
 
 	 wp config create --allow-root \
         --dbname=$SQL_DATABASE \
