@@ -37,3 +37,5 @@ else
 	wp redis enable --allow-root
 
 fi
+
+exec "@"
