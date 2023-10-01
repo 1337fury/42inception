@@ -27,7 +27,7 @@ COPY ./tools/config_wp.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/config_wp.sh
 
-#go www directory
+#go wordpress directory
 WORKDIR /var/www/wordpress
 
 RUN wget http://wordpress.org/latest.tar.gz \
@@ -38,6 +38,6 @@ RUN wget http://wordpress.org/latest.tar.gz \
 EXPOSE 9000
 
 	# Start PHP-FPM
-CMD ["/usr/sbin/php-fpm8.2", "-F"]
+CMD [ "/usr/sbin/php-fpm8.2", "-F" ]
 
 ENTRYPOINT [ "sh", "/usr/local/bin/config_wp.sh" ]
