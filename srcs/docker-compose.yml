@@ -67,6 +67,8 @@ services:
     container_name: portfolio
     build: ./requirements/bonus/website
     restart: always
+    ports:
+      - 80:80
     networks:
       - inception
 # Volumes
