@@ -72,6 +72,15 @@ services:
       - 80:80
     networks:
       - inception
+  # Adminer
+  adminer:
+    container_name: adminer
+    build: ./requirements/bonus/adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - inception
 # Volumes
 volumes:
   mysql_v:
