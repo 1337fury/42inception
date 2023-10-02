@@ -57,9 +57,8 @@ services:
     restart: always
     volumes:
       - wordpress_v:/home/fury/mysite
-    environment:
-      - FTP_USER=fury
-      - FTP_PASS=aPsyceNtaCIR
+    env_file:
+      - ./.env
     ports:
       - 21:21
     networks:
