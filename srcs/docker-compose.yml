@@ -60,6 +60,8 @@ services:
     environment:
       - FTP_USER=fury
       - FTP_PASS=aPsyceNtaCIR
+    ports:
+      - 21:21
     networks:
       - inception
   # portfolio
