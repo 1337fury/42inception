@@ -62,6 +62,13 @@ services:
       - FTP_PASS=aPsyceNtaCIR
     networks:
       - inception
+  # portfolio
+  portfolio:
+    container_name: portfolio
+    build: ./requirements/bonus/website
+    restart: always
+    networks:
+      - inception
 # Volumes
 volumes:
   mysql_v:
