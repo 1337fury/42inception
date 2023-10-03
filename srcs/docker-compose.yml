@@ -86,10 +86,11 @@ services:
     container_name: minio
     build: ./requirements/bonus/minio
     restart: always
+    env_file:
+      - ./.env
     ports:
-      - 9000:1200
-    networks:
-      - inception
+      - "9000:9000"
+    network_mode: "host" # This sets the network mode to "host"
 # Volumes
 volumes:
   mysql_v:
