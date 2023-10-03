@@ -81,17 +81,13 @@ services:
       - 8080:8080
     networks:
       - inception
-  cadvisor:
-    container_name: cadvisor
-    build: ./requirements/bonus/cadvisor
+  # minio
+  minio:
+    container_name: minio
+    build: ./requirements/bonus/minio
     restart: always
     ports:
-      - 9090:8080
-    volumes:
-    - /:/rootfs:ro
-    - /var/run:/var/run:rw
-    - /sys:/sys:ro
-    - /var/lib/docker:/var/lib/docker:ro
+      - 9000:9000
     networks:
       - inception
 # Volumes
