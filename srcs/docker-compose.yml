@@ -89,6 +89,7 @@ services:
     ports:
       - 9000:9000
       - 38881:38881
+      - 41405:41405
     networks:
       - inception
 # Volumes
