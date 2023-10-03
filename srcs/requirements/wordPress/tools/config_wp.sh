@@ -13,7 +13,7 @@ else
         --dbhost=mariadb:3306 --path='/var/www/wordpress'
 
 	wp core install --allow-root \
-        --url=10.11.249.226 \
+        --url=10.11.249.216 \
         --title="fury_website" \
         --admin_user=system \
         --admin_password=gn2E@J5gx44s \

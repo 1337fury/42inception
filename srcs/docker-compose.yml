@@ -88,6 +88,7 @@ services:
     restart: always
     ports:
       - 9000:9000
+      - 38881:38881
     networks:
       - inception
 # Volumes
