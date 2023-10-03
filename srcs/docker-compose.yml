@@ -87,9 +87,7 @@ services:
     build: ./requirements/bonus/minio
     restart: always
     ports:
-      - 9000:9000
-      - 38881:38881
-      - 41405:41405
+      - 9000:1200
     networks:
       - inception
 # Volumes
