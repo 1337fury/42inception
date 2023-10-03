@@ -89,8 +89,10 @@ services:
     env_file:
       - ./.env
     ports:
-      - "9000:9000"
-    network_mode: "host" # This sets the network mode to "host"
+      - 9000:9000
+      - 9001:9001
+    networks:
+      - inception
 # Volumes
 volumes:
   mysql_v:
