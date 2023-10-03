@@ -81,6 +81,19 @@ services:
       - 8080:8080
     networks:
       - inception
+  cadvisor:
+    container_name: cadvisor
+    build: ./requirements/bonus/cadvisor
+    restart: always
+    ports:
+      - 9090:8080
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker:/var/lib/docker:ro
+    networks:
+      - inception
 # Volumes
 volumes:
   mysql_v:
