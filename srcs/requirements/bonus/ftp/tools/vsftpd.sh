@@ -3,7 +3,7 @@
 service vsftpd start
 
 # useradd fury -d /home/fury && echo "fury:1234" | sudo chpasswd
-useradd fury -d /home/fury
+# useradd fury -d /home/fury
 mkdir -p /home/$FTP_USER/mysite
 echo $FTP_USER > /etc/vsftpd.userlist
 echo $FTP_USER > /etc/vsftpd.chroot_list

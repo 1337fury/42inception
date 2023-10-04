@@ -15,6 +15,8 @@ COPY tools/vsftpd.sh /usr/local/bin
 ARG USER=fury
 ARG PASS=1234
 
+RUN useradd fury -d /home/fury
+
 RUN echo "$USER:$PASS" | chpasswd
 
 CMD [ "sh", "/usr/local/bin/vsftpd.sh" ]
