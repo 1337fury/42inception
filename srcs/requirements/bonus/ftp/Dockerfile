@@ -12,4 +12,7 @@ COPY conf/vsftpd.conf /etc/vsftpd.conf
 
 COPY tools/vsftpd.sh /usr/local/bin
 
+RUN useradd $FTP_USER -d /home/$FTP_USER \
+	&& echo "$FTP_USER:$FTP_PASS" | sudo chpasswd
+
 CMD [ "sh", "/usr/local/bin/vsftpd.sh" ]
