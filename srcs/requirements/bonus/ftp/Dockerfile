@@ -12,8 +12,7 @@ COPY conf/vsftpd.conf /etc/vsftpd.conf
 
 COPY tools/vsftpd.sh /usr/local/bin
 
-# ARG USER=fury
-# ARG PASS=1234
+RUN echo ${FTP_USER}
 
 # RUN useradd fury -d /home/fury
 
