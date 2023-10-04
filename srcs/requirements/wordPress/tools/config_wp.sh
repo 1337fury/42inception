@@ -13,16 +13,16 @@ else
         --dbhost=mariadb:3306 --path='/var/www/wordpress'
 
 	wp core install --allow-root \
-        --url=10.11.249.216 \
-        --title="fury_website" \
-        --admin_user=system \
-        --admin_password=gn2E@J5gx44s \
-        --admin_email=sys@admin.me
+        --url=$URL \
+        --title=$TITLE \
+        --admin_user=$WP_ADMIN_USER \
+        --admin_password=$WP_ADMIN_PASS \
+        --admin_email=$WP_ADMIN_EMAIL
 
 	wp user create --allow-root \
-        abdeel-o \
-        fury@std.me \
-        --user_pass='hm!XM3X3S1F5'
+        $WP_SECOND_USER \
+        $WP_SECOND_USER_MAIL \
+        --user_pass=$WP_SECOND_USER_PASS
 	
 	# Bonus Part
 	wp plugin install --allow-root redis-cache --activate
