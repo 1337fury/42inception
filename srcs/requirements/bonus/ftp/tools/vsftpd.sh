@@ -1,10 +1,10 @@
 #!/bin/sh
 
-$FTP_USER=fury
-$FTP_PASS=1234
+# $FTP_USER=fury
+# $FTP_PASS=1234
 
-useradd $FTP_USER -d /home/$FTP_USER
-echo "$FTP_USER:$FTP_PASS" | sudo chpasswd
+# useradd $FTP_USER -d /home/$FTP_USER
+# echo "$FTP_USER:$FTP_PASS" | sudo chpasswd
 
 service vsftpd start
 

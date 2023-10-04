@@ -12,10 +12,7 @@ COPY conf/vsftpd.conf /etc/vsftpd.conf
 
 COPY tools/vsftpd.sh /usr/local/bin
 
-RUN echo ${FTP_USER}
-
-# RUN useradd fury -d /home/fury
-
-# RUN echo "$USER:$PASS" | chpasswd
+RUN useradd ${FTP_USER} -d /home/${FTP_USER} \
+	&& echo "${FTP_USER}:${FTP_PASS}" | chpasswd
 
 CMD [ "sh", "/usr/local/bin/vsftpd.sh" ]
