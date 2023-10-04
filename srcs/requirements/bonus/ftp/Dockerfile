@@ -12,4 +12,9 @@ COPY conf/vsftpd.conf /etc/vsftpd.conf
 
 COPY tools/vsftpd.sh /usr/local/bin
 
+ARG USER=fury
+ARG PASS=1234
+
+RUN echo "$USER:$PASS" | chpasswd
+
 CMD [ "sh", "/usr/local/bin/vsftpd.sh" ]
