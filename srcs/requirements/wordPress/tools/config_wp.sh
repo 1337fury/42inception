@@ -6,7 +6,7 @@ then
 	echo "wordpress already downloaded"
 else
 	sleep 5
-	 wp config create --allow-root \
+	wp config create --allow-root \
         --dbname=$SQL_DATABASE \
         --dbuser=$SQL_USER \
         --dbpass=$SQL_PASSWORD \
