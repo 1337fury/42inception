@@ -92,7 +92,8 @@ Transport Layer Security **`(TLS)`** is a cryptographic protocol designed to pro
 </details>
 
 **`How php works?`**
-PHP, which stands for "Hypertext Preprocessor," is a popular server-side scripting language used for web development. It is embedded within HTML code and executed on the server to generate dynamic web pages. 
+PHP, which stands for "Hypertext Preprocessor," is a popular server-side scripting language used for web development. It is embedded within HTML code and executed on the server to generate dynamic web pages.
+
 <img src="https://dl.dropbox.com/scl/fi/a2t470ih5l7h8133v9ofu/PHP_WORKFLOW.png?rlkey=mazh3wgqq6e6dd7j5j84a39oh&dl=0"></img>
 
 **`FastCGI Application Server`**
