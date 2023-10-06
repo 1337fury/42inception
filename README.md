@@ -39,15 +39,15 @@ Docker is an open-source platform that allows developers to build, ship, and run
 
 **Docker** provides the isolation of containers using a variety of Linux kernel features, including:
 
-+ Namespaces: Namespaces isolate the container's view of the system from the host machine. This includes things like the network namespace, which isolates the container's network from the host machine's network, and the mount namespace, which isolates the container's filesystem from the host machine's filesystem.
-+ Cgroups: Cgroups limit the resources that a container can use, such as CPU, memory, and disk I/O. This helps to ensure that containers do not interfere with each other or with the host machine.
-+ Seccomp: Seccomp filters the system calls that a container can make. This helps to prevent containers from executing malicious code.
++ **`Namespaces`**: Namespaces isolate the container's view of the system from the host machine. This includes things like the network namespace, which isolates the container's network from the host machine's network, and the mount namespace, which isolates the container's filesystem from the host machine's filesystem.
++ **`Cgroups`**: Cgroups limit the resources that a container can use, such as CPU, memory, and disk I/O. This helps to ensure that containers do not interfere with each other or with the host machine.
++ **`Seccomp`**: Seccomp filters the system calls that a container can make. This helps to prevent containers from executing malicious code.
 
 **Docker** also uses a number of other features to improve the isolation of containers, such as:
 
-+ Privileged mode: Privileged mode allows containers to access certain resources that are normally restricted, such as the host machine's kernel. However, privileged mode should only be used for containers that need it, as it can reduce the security of the Docker environment.
-+ Capabilities: Capabilities allow containers to have specific privileges, such as the ability to access the network or mount the filesystem. By default, containers have a very limited set of capabilities.
-+ User namespaces: User namespaces allow containers to have their own user IDs and groups. This helps to prevent containers from interfering with each other or with the host machine.
++ **`Privileged mode`**: Privileged mode allows containers to access certain resources that are normally restricted, such as the host machine's kernel. However, privileged mode should only be used for containers that need it, as it can reduce the security of the Docker environment.
++ **`Capabilities`**: Capabilities allow containers to have specific privileges, such as the ability to access the network or mount the filesystem. By default, containers have a very limited set of capabilities.
++ **`User namespaces`**: User namespaces allow containers to have their own user IDs and groups. This helps to prevent containers from interfering with each other or with the host machine.
 Together, these features provide a high degree of isolation for Docker containers. This isolation helps to improve the security, reliability, and performance of containerized applications.
 
 In addition to the above, Docker also provides a number of features that can be used to further improve the isolation of containers. For example, Docker can be used to create isolated networks for containers, and it can also be used to restrict the communication between containers.
@@ -66,15 +66,15 @@ Transport Layer Security **`(TLS)`** is a cryptographic protocol designed to pro
 
 <details>
 
-1. **Handshake and Key Exchange**: When a user enters a URL with "https://" in their web browser and initiates a request to a secure website, the browser contacts the web server.
+1. **`Handshake and Key Exchange`**: When a user enters a URL with "https://" in their web browser and initiates a request to a secure website, the browser contacts the web server.
 The server responds by sending its digital certificate to the browser. This certificate contains the server's public key and some information about the website.
 The browser verifies the certificate to ensure it's valid, issued by a trusted Certificate Authority (CA), and hasn't expired. This process is known as certificate validation.
-3. **Session Key Generation**: Once the certificate is validated, the browser generates a random symmetric encryption key called the session key. This session key will be used for encrypting and decrypting the data exchanged between the browser and the server during the current session.
-3. **Key Exchange**: The browser encrypts the session key using the server's public key from the certificate. This step ensures that only the server, with its corresponding private key, can decrypt the session key.
-4. **Secure Communication**: With the session key securely exchanged, the browser and server switch to using symmetric encryption for the rest of the session. This is much faster than asymmetric encryption (used for the initial handshake) and is used to protect the actual data exchanged during the session.
-5. **Data Transfer**: All data transmitted between the browser and server, including HTTP requests and responses, is encrypted using the session key. This encryption ensures that even if someone intercepts the data, they can't decipher it without the session key.
-6. **Data Integrity**: HTTPS also ensures data integrity. Data is often hashed (transformed into a fixed-size string of characters) before encryption. When received, the server checks if the data's hash matches the received data. If they don't match, it indicates that the data has been tampered with during transmission.
-7. **Termination**: When the session ends, either the browser or server can terminate it. This could happen due to inactivity or when the user closes the browser.
+3. **`Session Key Generation`**: Once the certificate is validated, the browser generates a random symmetric encryption key called the session key. This session key will be used for encrypting and decrypting the data exchanged between the browser and the server during the current session.
+3. **`Key Exchange`**: The browser encrypts the session key using the server's public key from the certificate. This step ensures that only the server, with its corresponding private key, can decrypt the session key.
+4. **`Secure Communication`**: With the session key securely exchanged, the browser and server switch to using symmetric encryption for the rest of the session. This is much faster than asymmetric encryption (used for the initial handshake) and is used to protect the actual data exchanged during the session.
+5. **`Data Transfer`**: All data transmitted between the browser and server, including HTTP requests and responses, is encrypted using the session key. This encryption ensures that even if someone intercepts the data, they can't decipher it without the session key.
+6. **`Data Integrity`**: HTTPS also ensures data integrity. Data is often hashed (transformed into a fixed-size string of characters) before encryption. When received, the server checks if the data's hash matches the received data. If they don't match, it indicates that the data has been tampered with during transmission.
+7. **`Termination`**: When the session ends, either the browser or server can terminate it. This could happen due to inactivity or when the user closes the browser.
 The session key is discarded, making it difficult for anyone to decrypt past communications even if they somehow obtain the server's private key.
 
 </details>
