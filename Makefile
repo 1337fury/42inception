@@ -1,11 +1,11 @@
 #[abdeel-o]
-all:
+build:
 	cd srcs \
 	&& sudo docker compose up --build -d
-build:
+dir:
 	mkdir -p /home/abdeel-o/data/wordpress \
 	&& mkdir -p /home/abdeel-o/data/mysql
-start: build all
+start: dir build
 stop:
 	cd srcs \
 	&& sudo docker compose down
