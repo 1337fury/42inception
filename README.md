@@ -121,3 +121,42 @@ docker network disconnect my-network web
 ```
 
 Docker networks are a powerful tool that can be used to connect and isolate Docker containers. They are essential for running distributed applications and services with Docker.
+
+## Docker compose
+Docker Compose is a tool for defining and running multi-container Docker applications. With Docker Compose, you can use a YAML file to configure your application's services. Then, with a single command, you create and start all the services from your configuration.
+
+Docker Compose works by creating a Docker network for your application and then starting each of the services in a separate container on that network. The services can then communicate with each other using the Docker network.
+
+Docker Compose is a convenient way to manage multi-container applications because it allows you to define your entire application stack in a single file. This makes it easy to start, stop, and manage your application as a whole.
+
+Here is an example of a Docker Compose file for a simple web application:
+
+```yaml
+version: "3"
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./db:/var/lib/mysql
+
+```
+
+This file defines two services: `web` and `db`. The `web` service uses the `nginx:latest` Docker image and exposes port 80. The `db` service uses the `mysql:latest` Docker image and exposes no ports.
+
+To start this application, you would simply run the following command:
+
+```
+docker-compose up -d
+```
+
+This would create the Docker network, start the `web` and `db` services, and attach the `web` service to port 80 on the host machine.
