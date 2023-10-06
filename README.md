@@ -9,6 +9,7 @@
     - [How HTTPS works?](#)
 	- [How php works?](#)
 	- [FastCGI Application Server](#)
+- [Docker Network](#)
 
 
 ## Docker
@@ -84,3 +85,39 @@ PHP, which stands for "Hypertext Preprocessor," is a popular server-side scripti
 
 **`FastCGI Application Server`**
 The FastCGI application server is a separate process or set of processes running on a different server or the same server but on a different port. It is responsible for executing the actual web application code, processing requests, and generating dynamic content. The application server communicates with the proxy server using the FastCGI protocol.
+
+## Docker Network
+A Docker network is a virtual network that connects Docker containers. It provides a way for containers to communicate with each other and with other hosts on the network. Docker networks are created and managed using the Docker CLI or Docker Compose.
+
+There are two types of Docker networks:
+
+* **Bridge networks:** Bridge networks are the most common type of Docker network. They create a virtual bridge device on the host machine and connect the containers to that bridge. This allows the containers to communicate with each other and with other hosts on the network, but it also exposes them to the public internet.
+* **Overlay networks:** Overlay networks create a virtual network that spans multiple Docker hosts. This allows containers on different hosts to communicate with each other without being exposed to the public internet. Overlay networks are more complex to set up than bridge networks, but they offer better security and isolation.
+
+Docker networks can be used to achieve a variety of goals, such as:
+
+* **Isolating containers:** Docker networks can be used to isolate containers from each other and from the outside world. This can be useful for security purposes or to prevent containers from interfering with each other.
+* **Connecting containers:** Docker networks can be used to connect containers to each other. This allows them to communicate with each other and share resources.
+* **Exposing containers to the public internet:** Docker networks can be used to expose containers to the public internet. This allows you to run web applications and other services inside containers.
+
+To create a Docker network, you can use the `docker network create` command. To connect a container to a network, you can use the `docker network connect` command. To disconnect a container from a network, you can use the `docker network disconnect` command.
+
+For example, to create a bridge network called `my-network`, you would use the following command:
+
+```
+docker network create my-network
+```
+
+To connect a container called `web` to the `my-network` network, you would use the following command:
+
+```
+docker network connect my-network web
+```
+
+To disconnect the `web` container from the `my-network` network, you would use the following command:
+
+```
+docker network disconnect my-network web
+```
+
+Docker networks are a powerful tool that can be used to connect and isolate Docker containers. They are essential for running distributed applications and services with Docker.
