@@ -9,4 +9,5 @@ RUN wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/bin/mi
 
 EXPOSE 9000
 
+#  start minio as a server.
 CMD ["minio", "server", "/data", "--console-address", ":9001"]
