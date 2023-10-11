@@ -4,7 +4,7 @@ build:
 	cd srcs \
 	&& sudo docker compose up --build -d
 dir:
-	mkdir -p /home/abdeel-o/data/wordpress \
+	mkdir -p /home/abdeel-o/data/wordPress \
 	&& mkdir -p /home/abdeel-o/data/mysql
 stop:
 	cd srcs \
